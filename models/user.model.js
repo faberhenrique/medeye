@@ -6,7 +6,7 @@ let UserSchema = new Schema({
     user: {type: String, required: true},
     password: {type: String, required: true},
     cpf: {type: String, required: true},
-    tel: {type: Number, max: 100},
+    tel: {type: Number},
     date: { type: Date, default: Date.now },
     email: {type: String, required: true, max: 100},
 });

@@ -33,3 +33,10 @@ exports.user_update = function (req, res, next) {
         res.send('User udpated.');
     });
 };
+
+exports.user_delete = function (req, res, next) {
+    User.findByIdAndDelete(req.params.id, function (err) {
+        if (err) return next(err);
+        res.send('Deleted successfully!');
+    })
+};
