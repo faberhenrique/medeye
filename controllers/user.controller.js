@@ -26,3 +26,10 @@ exports.user_details = function (req, res, next) {
         res.send(user);
     })
 };
+
+exports.user_update = function (req, res, next) {
+    User.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, user) {
+        if (err) return next(err);
+        res.send('User udpated.');
+    });
+};
