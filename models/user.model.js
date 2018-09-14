@@ -8,7 +8,7 @@ let UserSchema = new Schema({
     cpf: {type: String, required: true},
     tel: {type: Number},
     date: { type: Date, default: Date.now },
-    email: {type: String, required: true, max: 100},
+    email: {type: String, required: true},
 });
 
 

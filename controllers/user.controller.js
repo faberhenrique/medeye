@@ -1,5 +1,9 @@
 const User = require('../models/user.model');
 
+let path = require('path');
+let filePath = "./views/pages/user"
+let resolvedPath = path.resolve(filePath);
+
 exports.user_create = function (req, res, next) {
     let user = new User(
         {
@@ -18,6 +22,15 @@ exports.user_create = function (req, res, next) {
             return next(err);
         }
         res.send('User Created successfully')
+    })
+};
+exports.user_all = function (req, res, next) {
+    User.find(function (err, user) {
+        if (err) return next(err);
+        // res.send(user);
+
+        res.render(resolvedPath + '/list.ejs',
+        {title: 'Lista de Usuários', users: user});
     })
 };
 exports.user_details = function (req, res, next) {
