@@ -27,17 +27,20 @@ exports.user_create = function (req, res, next) {
 exports.user_all = function (req, res, next) {
     User.find(function (err, user) {
         if (err) return next(err);
-        // res.send(user);
-
         res.render(resolvedPath + '/list.ejs',
-        {title: 'Lista de Usuários', users: user});
+        {title: 'Lista de Usuários', users: user, action: '/:id/'});
     })
 };
 exports.user_details = function (req, res, next) {
-    User.findById(req.params.id, function (err, user) {
-        if (err) return next(err);
-        res.send(user);
-    })
+    // User.findById(req.params.id, function (err, user) {
+    //     if (err) return next(err);
+    //     res.send(user);
+    // })
+    let name = req.body.name;
+
+    User.find( {name: {$regex: name} }, function(err, user) {
+        res.render(resolvedPath + '/find.ejs',{title: 'Lista de Usuários', user: user});
+    });
 };
 
 exports.user_update = function (req, res, next) {
