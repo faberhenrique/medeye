@@ -1,10 +1,9 @@
 <% include ../../templates/header.ejs %>
     <div class="container-fluid">
-        <form class="" action="details/" method="post">
+        <form class="" action="user/details/" method="post">
             <input class="form-control form-control-lg" name="name" type="text" placeholder="Digite o nome do usuário:">
-            <input type="submit" value="Buscar" >
+            <input type="submit" value="Buscar">
         </form>
-
         <ul class="list-group">
             <% users.forEach(function(user){ %>
                 <li class="list-group-item">
@@ -12,16 +11,74 @@
     					<span class="info">
     						Name:
     					</span>
-                        <%= user.name %>
-                    </span>
-                    <a class="link-edit" href="/edit/<%= user._id %>">
+                    <%= user.name %>
+                        </span>
+                        <a class="link-edit" href="/edit/<%= user._id %>">
                         <i class="fa fa-edit"></i> Edit
                     </a>
-                    <a class="link-delete" href="/user/<%= user._id %>/delete" onclick="return confirm('Tem certeza que deseja excluir? / Are you sure you want to delete?');">
+                        <a class="link-delete" href="/user/<%= user._id %>/delete" onclick="return confirm('Tem certeza que deseja excluir? / Are you sure you want to delete?');">
                     <i class="fa fa-close"></i> Delete
 			</a>
                 </li>
                 <% }) %>
         </ul>
-    </div>
-<% include ../../templates/footer.ejs %>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a id="1" href="#">Tab 1</a>
+            </li>
+            <li><a id="2" href="#">Tab 2</a></li>
+            <li><a id="3" href="#">Tab 3</a></li>
+        </ul>
+
+        <!-- Accordions -->
+        <div class="tabContent" id="tabContent1">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">First </a>
+                </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <p>First Section</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Second</a>
+                </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Second Section</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Third</a>
+                </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Third Section</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabContent" id="tabContent2">
+            Tab Content 2
+        </div>
+        <div class="tabContent" id="tabContent3">
+            Tab Content 3
+        </div>
+
+        <% include ../../templates/footer.ejs %>

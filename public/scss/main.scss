@@ -2,3 +2,18 @@
     margin-bottom: 20px;
     padding-bottom: 1px;
 }
+.users-find{
+    display: flex;
+    .card{
+        &:nth-child(n+2){
+            margin-left: 20px;
+        }
+    }
+    .card-body{
+        display: flex;
+        align-items: center;
+    }
+}
+.tabContent {
+  padding:20px;
+}

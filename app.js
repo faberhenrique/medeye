@@ -1,13 +1,14 @@
 // app.js
 const express = require('express');
 const bodyParser = require('body-parser');
+let path = require('path');
 let Promise = require("bluebird");
 
 
 // initialize our express app
 const app = express();
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
@@ -22,6 +23,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(express.static('public'));
+
 // Imports routes for the products
 const user = require('./routes/user.route');
 app.use('/user', user);
@@ -29,7 +32,6 @@ app.use('/user', user);
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
-
 let port = 5000;
 
 app.listen(port, () => {

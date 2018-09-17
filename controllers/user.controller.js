@@ -21,7 +21,8 @@ exports.user_create = function (req, res, next) {
         if (err) {
             return next(err);
         }
-        res.send('User Created successfully')
+        // res.send('User Created successfully')
+        res.render(resolvedPath + '/create.ejs',{title: 'Lista de Usuários - Cadastro', user: user});
     })
 };
 exports.user_all = function (req, res, next) {
@@ -32,14 +33,13 @@ exports.user_all = function (req, res, next) {
     })
 };
 exports.user_details = function (req, res, next) {
-    // User.findById(req.params.id, function (err, user) {
-    //     if (err) return next(err);
-    //     res.send(user);
-    // })
     let name = req.body.name;
-
-    User.find( {name: {$regex: name} }, function(err, user) {
-        res.render(resolvedPath + '/find.ejs',{title: 'Lista de Usuários', user: user});
+    User.find( {name: {$regex: name } }, function(err, user) {
+        console.log(user.length);
+        if (user.length) {
+            res.render(resolvedPath + '/find.ejs',{title: 'Lista de Usuários - Busca', user: user})
+        }
+        else res.render(resolvedPath + '/error.ejs',{title: 'Usuário não encontrado - ERROR'})
     });
 };
 
