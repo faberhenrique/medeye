@@ -30,7 +30,7 @@ const user = require('./routes/user.route');
 app.use('/user', user);
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html')
+  res.sendFile(__dirname + '/views/index.ejs')
 })
 let port = 5000;
 

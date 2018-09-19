@@ -1,3 +1,6 @@
+$base : #343A40;
+$branco : #FFF;
+
 .navbar {
     margin-bottom: 20px;
     padding-bottom: 1px;
@@ -16,4 +19,42 @@
 }
 .tabContent {
   padding:20px;
+  display: none;
+}
+.nav-tabs{
+    margin-top: 20px;
+    &__item{
+        width: 180px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px #dee2e6;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        a{
+            color: $base;
+            text-decoration: none;
+        }
+
+        &:nth-child(n+2){
+            margin-left: 5px;
+        }
+
+        &:hover{
+            background: $base;
+            a{
+                color: $branco;
+            }
+        }
+    }
+}
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
 }

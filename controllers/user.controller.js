@@ -35,7 +35,6 @@ exports.user_all = function (req, res, next) {
 exports.user_details = function (req, res, next) {
     let name = req.body.name;
     User.find( {name: {$regex: name } }, function(err, user) {
-        console.log(user.length);
         if (user.length) {
             res.render(resolvedPath + '/find.ejs',{title: 'Lista de Usuários - Busca', user: user})
         }
