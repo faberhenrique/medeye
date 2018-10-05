@@ -9,6 +9,9 @@ let Promise = require("bluebird");
 const app = express();
 app.set('view engine', 'ejs');
 
+const jwt = require('jsonwebtoken');
+const exjwt = require('express-jwt');
+
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
@@ -30,7 +33,7 @@ const user = require('./routes/user.route');
 app.use('/user', user);
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.ejs')
+  res.render(__dirname + '/views/index.ejs',{title: 'Lista de Usuários - Cadastro'})
 })
 let port = 5000;
 
