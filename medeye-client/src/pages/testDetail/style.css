@@ -10,3 +10,17 @@
 .test-info h1{
     font-size: 32px;
 }
+
+.test-info [type="file"] { 
+    display: none;
+}
+.test-info .test-input{
+    background: #3c658b;
+    color: #fff;
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
