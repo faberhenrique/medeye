@@ -1,0 +1,65 @@
+.test-list{
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
+.test-list article{
+    background: #fff;
+    border: 1px solid  #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.test-list article p{
+    font-size: 16px;
+    color: #999;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.test-list article a{
+    font-size: 16px;
+    color: #3c658b;
+    border: 2px solid #3c658b;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+.test-list article a:hover{
+    background: #3c658b;
+    color: #fff;
+}
+
+.test-list .actions{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.test-list .actions button{
+    padding: 5px;
+    border-radius: 5px;
+    border: 0;
+    background: #3c658b;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.test-list .actions button[disabled]{
+    opacity: 0.5;
+    cursor: default;
+}
+.test-list .actions button:hover{
+    opacity: 0.7;
+}
+.test-list .actions button[disabled]:hover{
+    opacity: 0.5;
+}
