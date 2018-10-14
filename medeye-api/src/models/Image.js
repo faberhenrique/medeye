@@ -9,6 +9,10 @@ const ImageSchema = new mongoose.Schema({
         type: String,
         required: true,        
     },
+    test:{
+        type: String,
+        required: true,        
+    },
     url:{
         type: String,
         required: true,        
@@ -19,4 +23,4 @@ const ImageSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Product', ImageSchema);
+mongoose.model('Image', ImageSchema);
