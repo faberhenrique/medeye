@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ImageSchema = new mongoose.Schema({
+const ImageTestSchema = new mongoose.Schema({
     title:{
         type: String,
         required: true,
@@ -13,9 +13,12 @@ const ImageSchema = new mongoose.Schema({
         type: String,
         required: true,        
     },
-    url:{
+    urlImage:{
         type: String,
         required: true,        
+    },
+    urlPdf:{
+        type: String,
     },
     createdAt:{
         type: Date,
@@ -23,4 +26,4 @@ const ImageSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Image', ImageSchema);
+mongoose.model('Image', ImageTestSchema);
