@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import api from  '../../services/api';
 
 // CSS
-import './style.css';
+import './styles.css';
 export default class Test extends Component {
     state = {
         test: {},
