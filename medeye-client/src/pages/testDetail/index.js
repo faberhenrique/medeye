@@ -22,7 +22,7 @@ export default class Test extends Component {
                 <h1>{test.title}</h1>
                 <p>{test.description}</p>
                 <input id="test-input" type="file"/>
-                <label for="test-input" className="test-input">
+                <label htmlFor="test-input" className="test-input">
                     <span> Choose a file&hellip;</span>
                 </label>
             </div>
