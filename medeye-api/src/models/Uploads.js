@@ -5,9 +5,9 @@ const UploadSchema = new mongoose.Schema({
         type: String,
         // required: true,
     },
-    description:{
+    test:{
         type: String,
-        // required: true,        
+        required: true,        
     },
     urlImg:{
         type: String,
