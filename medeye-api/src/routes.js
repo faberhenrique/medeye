@@ -11,10 +11,16 @@ const storage = multer.diskStorage({
         cb(null, 'public/uploads/')
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname)
+        cb(null, Date.now() + '-' + file.originalname);        
     }
 });
-const upload = multer({ storage });
+const upload = multer({ 
+    storage,
+    limits: {
+        fileSize : 1 * 1024 * 1024 // 1MB
+    }
+});
+
 
 // TESTS
 routes.get('/tests', TestController.index);

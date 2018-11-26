@@ -3,8 +3,19 @@ const Uploads = mongoose.model('Uploads');
 
 module.exports = {
     async store(req, res){
-        console.log(req.body, req.file.path)
+        
+        let pathImg = req.file.path;
+        let test = req.body.test;
+        console.log();
+        const upload = await Uploads.create(
+            [{
+                "test" : test,
+                "urlImg" : pathImg,
+                // "urlPdf" : "https://www.cleo.com/content/uploads/logo_s3-compressor.png"
+            }]
+        );
 
-        return res.send('ok');
+        return res.json(upload);
+        
     }
 }

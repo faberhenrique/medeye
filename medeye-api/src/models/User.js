@@ -1,24 +1,17 @@
 const mongoose = require('mongoose');
 
-const ImageTestSchema = new mongoose.Schema({
-    title:{
+const UserSchema = new mongoose.Schema({
+    username:{
         type: String,
         required: true,
     },
-    description:{
+    password:{
         type: String,
         required: true,        
     },
-    test:{
+    name:{
         type: String,
         required: true,        
-    },
-    urlImage:{
-        type: String,
-        required: true,        
-    },
-    urlPdf:{
-        type: String,
     },
     createdAt:{
         type: Date,
@@ -26,6 +19,4 @@ const ImageTestSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Image', ImageTestSchema);
-
-
+mongoose.model('User', UserSchema);

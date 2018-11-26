@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from  '../../services/api';
 
+import Upload from '../upload';
 // CSS
 import './styles.css';
 export default class Test extends Component {
@@ -21,10 +22,7 @@ export default class Test extends Component {
             <div className="test-info">
                 <h1>{test.title}</h1>
                 <p>{test.description}</p>
-                <input id="test-input" type="file"/>
-                <label htmlFor="test-input" className="test-input">
-                    <span> Choose a file&hellip;</span>
-                </label>
+                <Upload></Upload>
             </div>
         )
     }

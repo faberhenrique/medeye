@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Main from './pages/main';
 import Tests from './pages/testList';
-import Test from './pages/testDetail';
+import Test from './pages/upload';
 
 const Routes = () => (
     <BrowserRouter>
